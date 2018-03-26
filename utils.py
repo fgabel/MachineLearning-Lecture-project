@@ -43,7 +43,7 @@ def SamplePairing(X_train, Y_train, N):
     """
     high = X_train.shape[0]
     for i in range(N):
-        """expand positive examples by N"""
+        """add N samples using SamplePairing"""
         random1, random2 = np.random.randint(low = 0, high = high, size=2)
         new_sample = np.expand_dims((X_train[random1, :, :, :] + X_train[random2, :, :, :])/2, axis = 0)
         X_train = np.concatenate((X_train, new_sample), axis = 0)
